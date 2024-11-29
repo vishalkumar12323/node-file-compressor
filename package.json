@@ -1,0 +1,32 @@
+{
+  "name": "node-file-compressor",
+  "version": "1.0.0",
+  "description": "compress file using zlib(zlib, brotli, deflate) module node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalkumar12323/node-file-compressor.git"
+  },
+  "keywords": [
+    "node.js",
+    "zlib",
+    "brotli",
+    "deflate"
+  ],
+  "author": "vishal kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vishalkumar12323/node-file-compressor/issues"
+  },
+  "homepage": "https://github.com/vishalkumar12323/node-file-compressor#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}
