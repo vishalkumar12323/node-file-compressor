@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -10,8 +11,14 @@ app.use(express.json());
 
 app.use(cors());
 
+// setting up view engines (ejs)
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  res.json({ msg: "successfully loaded." });
+  res.json({ msg: "Home" });
+});
+app.get("/about", (req, res) => {
+  res.render("index", { name: "vishal", age: 18 });
 });
 
 app.listen(port, () =>
