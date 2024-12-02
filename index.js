@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = process.env.PORT || 8080;
 
-// setting static files
+// setting up static files serve
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,10 +16,7 @@ app.use(cors());
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.json({ msg: "Home" });
-});
-app.get("/about", (req, res) => {
-  res.render("index", { name: "vishal", age: 18 });
+  res.render("index");
 });
 
 app.listen(port, () =>

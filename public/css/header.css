@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 4rem;
+}
+
+.app__logo a{
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar__list li {
+    list-style: none;
+}
+
+.navbar__list li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.3rem;
+    transition: all 1ms linear;
+}
+.navbar__list li a:hover {
+    font-weight: 600;
+}
