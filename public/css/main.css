@@ -12,3 +12,15 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+.input__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.submit__btn {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
