@@ -6,13 +6,12 @@
     <div id="root">
       <%- include('./partials/header.ejs') %>
       <div class="__container">
-        <%- include('./upload.ejs') %> <%- include('./content.ejs') %> <% if
-        (locals.files) { %>
+        <%- include('./upload.ejs') %> <% if (locals.files) { %>
         <div class="__content">
           <div class="side__bar">
             <ul class="files__list">
               <% locals.files.forEach(file=> { %>
-              <li class="file__item"><%= file.filename %></li>
+              <li class="file__item"><%= file.name %></li>
               <% }) %>
             </ul>
           </div>
