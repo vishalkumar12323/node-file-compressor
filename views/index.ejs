@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head.ejs') %>
+  <%- include('./partials/head.ejs') %>
 
   <body>
     <div id="root">
       <%- include('./partials/header.ejs') %>
-      <%- include('./upload.ejs') %>
-      <%- include('./partials/footer.ejs') %>
+      <div class="__container">
+        <div class="__uploader">
+          <div class="uploader__heading">
+            <h2>Compress files using node (zlib, brotli, dflate)</h2>
+          </div>
+
+          <div class="uploadInput">
+            <div class="upload__icon">
+              <img src="images/upload.svg" alt="upload icon" />
+            </div>
+            <form
+              action="/upload-files"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input
+                class="__input"
+                type="file"
+                name="file"
+                id="file"
+                multiple
+                required
+              />
+              <input type="submit" value="Upload" class="__btn" />
+            </form>
+          </div>
+        </div>
+        <% if (locals.files) { %>
+        <div class="__content">
+          <div class="side__bar">
+            <ul class="files__list">
+              <% locals.files.forEach(file=> { %>
+              <li class="file__item"><%= file.filename %></li>
+              <% }) %>
+            </ul>
+          </div>
+          <div class="main__content"></div>
+        </div>
+        <% } else { %>
+        <div class="no__content">
+          <h2 class="uploader__heading">There are no files.</h2>
+        </div>
+        <%} %>
+      </div>
     </div>
+    <%- include('./partials/footer.ejs') %>
   </body>
-  
-  </html>
+
+  <script src="scripts/script.js"></script>
+</html>

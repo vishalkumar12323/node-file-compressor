@@ -18,9 +18,6 @@ app.use(cors());
 app.set("view engine", "ejs");
 
 app.use(router);
-app.get("/", (req, res) => {
-  res.render("index");
-});
 
 app.listen(port, () =>
   console.log(`listening on url: http://localhost:${port}`)
