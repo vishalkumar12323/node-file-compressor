@@ -6,33 +6,8 @@
     <div id="root">
       <%- include('./partials/header.ejs') %>
       <div class="__container">
-        <div class="__uploader">
-          <div class="uploader__heading">
-            <h2>Compress files using node (zlib, brotli, dflate)</h2>
-          </div>
-
-          <div class="uploadInput">
-            <div class="upload__icon">
-              <img src="images/upload.svg" alt="upload icon" />
-            </div>
-            <form
-              action="/upload-files"
-              method="post"
-              enctype="multipart/form-data"
-            >
-              <input
-                class="__input"
-                type="file"
-                name="file"
-                id="file"
-                multiple
-                required
-              />
-              <input type="submit" value="Upload" class="__btn" />
-            </form>
-          </div>
-        </div>
-        <% if (locals.files) { %>
+        <%- include('./upload.ejs') %> <%- include('./content.ejs') %> <% if
+        (locals.files) { %>
         <div class="__content">
           <div class="side__bar">
             <ul class="files__list">
